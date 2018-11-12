@@ -5,6 +5,13 @@ import './App.css'
 import SearchPage from './SearchPage'
 import BookList from './BookList'
 
+/*Code reference
+ * I would like to point to several people that have helped
+ * either directly via Udacity or indirectly via github
+ * Paul Coffield
+ * https://github.com/sarah-maris/reactnd-project-myreads/blob/master/README.md
+ * https://github.com/KatyaHorton/Udacity-MyReads-PROJECT
+ */
 
 class App extends React.Component {
   state = {
@@ -55,7 +62,7 @@ class App extends React.Component {
             />
           )}
         />
-        
+
       </div>
     )
   }
