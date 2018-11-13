@@ -10,8 +10,8 @@ class Book extends Component {
                         `url(${this.props.book.imageLinks.thumbnail})`
                         : `url(${'icons/No_image_available'})` }}></div>
           <div className="book-shelf-changer">
-            <select defaultValue="none" onChange={(event) => this.props.changeShelf(this.props.book, event.target.value)}
-value={this.props.currentShelf}>
+          <select defaultValue={this.props.currentShelf}
+           onChange={(event) => this.props.changeShelf(this.props.book, event.target.value)}>
               <option value="move" disabled>Move to...</option>
               <option value="currentlyReading">Currently Reading</option>
               <option value="wantToRead">Want to Read</option>

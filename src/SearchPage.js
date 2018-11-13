@@ -1,13 +1,15 @@
 import React, {Component} from 'react'
+//import DebounceInput from 'react-debounce-input'
 import * as BooksAPI from './BooksAPI'
 import {Link} from 'react-router-dom'
 import Book from './Book'
+
 
 class SearchPage extends Component {
   state = {
     search: '',
     searchedBooks: [],
-    searchErr: false
+    //searchErr: false
   }
 
   updateSearch = (search) => {
@@ -15,22 +17,22 @@ class SearchPage extends Component {
     this.showResults(search)
   }
 
-  showResults = (search) => {
+  /*showResults = (search) => {
     // if user input => run the search
     if (search) {
       BooksAPI.search(search).then(searchedBooks => {
         if(searchedBooks > 0) {
           this.setState({ searchedBooks: [], searchErr: true})
         }else{
-          this.setState({searchedBooks:searchedBooks, search:search, searchErr: false})
+          this.setState({searchedBooks:searchedBooks, searchErr: false})
         }
       })
     }else{
       this.setState({ searchedBooks: [], searchErr: false})
     }
-  }
+  }*/
 
-  /*showResults = (search) => {
+  showResults = (search) => {
     if(search) {
 	    BooksAPI.search(search).then((searchedBooks) => {
         if(searchedBooks.error) {
@@ -42,7 +44,7 @@ class SearchPage extends Component {
     }else{
       this.setState({ searchedBooks: []})
     }
-  }*/
+  }
 
   render() {
     return (
@@ -50,7 +52,7 @@ class SearchPage extends Component {
         <div className="search-books-bar">
           <Link to="/" className="close-search">Close</Link>
             <div className="search-books-input-wrapper">
-              <input type="text" placeholder="Search by title or author"
+            <input type="text" placeholder="Search by title or author"
                      value={this.state.search}
                      onChange={(event) => this.updateSearch(event.target.value)}/>
             </div>
